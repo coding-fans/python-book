@@ -1,0 +1,19 @@
+.. 最佳实践
+    FileName:   index.rst
+    Author:     Fasion Chan
+    Created:    2018-03-10 15:54:50
+    @contact:   fasionchan@gmail.com
+    @version:   $Id$
+
+    Description:
+
+    Changelog:
+
+========
+最佳实践
+========
+
+.. toctree::
+   :maxdepth: 3
+
+    处理命令行参数 <argparse>
