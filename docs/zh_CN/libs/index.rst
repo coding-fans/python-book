@@ -14,6 +14,7 @@
 ========
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
     tabulate <tabulate>
+    zbarlight <zbarlight>

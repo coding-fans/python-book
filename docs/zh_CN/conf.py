@@ -17,11 +17,13 @@ import datetime
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+now = datetime.datetime.now()
+
 
 # -- Project information -----------------------------------------------------
 
 project = u'Python语言小册'
-copyright = u'2018, <a href="https://fasionchan.com">fasionchan</a>'
+copyright = u'%d, <a href="https://fasionchan.com">fasionchan</a>' % (now.year,)
 author = u'fasionchan'
 
 # The short X.Y version
@@ -132,6 +134,7 @@ html_sidebars = {
         'more.html',
         #'sf-namecard-fasionchan.html',
         'wechat-mp-qrcode.html',
+        'course-ad.html',
         #'donate.html',
 
         #'reward.html',

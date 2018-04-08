@@ -18,7 +18,7 @@ Python语言小册
 ==============
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
     关于 <about/index>
     最佳实践 <practices/index>
