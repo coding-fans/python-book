@@ -14,7 +14,9 @@
 ========
 
 .. toctree::
-   :maxdepth: 2
+    :titlesonly:
 
+    IPy <ipy>
+    openpyxl <openpyxl>
     tabulate <tabulate>
     zbarlight <zbarlight>

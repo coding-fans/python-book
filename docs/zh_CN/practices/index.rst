@@ -14,6 +14,6 @@
 ========
 
 .. toctree::
-   :maxdepth: 3
+    :titlesonly:
 
     处理命令行参数 <argparse>

@@ -18,20 +18,14 @@ Python语言小册
 ==============
 
 .. toctree::
-   :maxdepth: 2
+    :titlesonly:
 
     关于 <about/index>
     最佳实践 <practices/index>
     推荐类库 <libs/index>
-
-
+    部署方案 <deployment/index>
 
 .. comments
     comment something out below
 
-    Indices and tables
-    ==================
-
-    * :ref:`genindex`
-    * :ref:`modindex`
-    * :ref:`search`
+    异步编程 <async/index>
