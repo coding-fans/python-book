@@ -16,6 +16,7 @@
 .. toctree::
     :titlesonly:
 
+    exchangelib <exchangelib>
     IPy <ipy>
     openpyxl <openpyxl>
     tabulate <tabulate>
