@@ -42,6 +42,7 @@ release = u'1.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "sphinx_sitemap",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -199,6 +200,8 @@ texinfo_documents = [
      author, 'Python', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+site_url = 'https://python-book.readthedocs.io/zh_CN/latest/'
 
 def setup(app):
     app.add_stylesheet('css/hide-ad.css')
