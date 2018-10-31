@@ -17,6 +17,7 @@
     :titlesonly:
 
     exchangelib <exchangelib>
+    Faker <faker>
     IPy <ipy>
     openpyxl <openpyxl>
     tabulate <tabulate>

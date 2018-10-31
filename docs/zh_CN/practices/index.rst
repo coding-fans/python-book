@@ -16,5 +16,6 @@
 .. toctree::
     :titlesonly:
 
+    更优雅地造测试数据 <../libs/faker>
     装饰器高级用法 <advanced-decorator>
     处理命令行参数 <argparse>
