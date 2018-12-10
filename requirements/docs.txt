@@ -1,1 +1,2 @@
+Sphinx==1.8.2
 sphinx-sitemap==0.3.1
