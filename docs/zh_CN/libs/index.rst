@@ -19,6 +19,7 @@
     exchangelib <exchangelib>
     Faker <faker>
     IPy <ipy>
+    matplotlib <matplotlib/index>
     openpyxl <openpyxl>
     tabulate <tabulate>
     zbarlight <zbarlight>

@@ -89,6 +89,120 @@ exchangelib
     $ # For Kerberos support, install these:
     $ yum install gcc python-devel krb5-devel krb5-workstation python-devel
 
+发送邮件
+========
+
+发送邮件只需初始化 `Message` 对象并调用 `send` 方法即可：
+
+.. code-block:: python
+
+    from exchangelib import Message
+
+    message = Message(
+        account=account,
+        subject='测试主题',
+        body='这是一封测试邮件',
+        to_recipients=(
+            'jim@example.com',
+        ),
+    )
+    message.send()
+
+其中， *account* 参数是账号授权信息，抢先一览小节已介绍过；
+*subject* 为邮件主题； *body* 为邮件体；
+*to_recipients* 指定收件人列表。
+
+抄送、密送
+----------
+
+**抄送** 收件人列表通过 `cc_recipients` 参数指定：
+
+.. code-block:: python
+
+    message = Message(
+        account=account,
+        subject='测试主题',
+        body='这是一封测试邮件',
+        to_recipients=(
+            'jim@example.com',
+        ),
+        cc_recipients=(
+            'another-one@example.com',
+        ),
+    )
+
+类似地， **密送** 收件人通过 `bcc_recipients` 参数指定：
+
+.. code-block:: python
+
+    message = Message(
+        account=account,
+        subject='测试主题',
+        body='这是一封测试邮件',
+        to_recipients=(
+            'jim@example.com',
+        ),
+        bcc_recipients=(
+            'another-one@example.com',
+        ),
+    )
+
+HTML邮件
+--------
+
+邮件一般不局限于纯文本，可以用 `HTML` 编写格式丰富的内容：
+
+.. code-block:: python
+
+    from exchangelib import HTMLBody
+
+    html = '<html><body>Hello happy <blink>OWA user!</blink></body></html>'
+    message = Message(
+        account=account,
+        subject='测试主题',
+        body=HTMLBody(html),
+        to_recipients=(
+            'jim@example.com',
+        ),
+    )
+
+发送附件
+--------
+
+发送附件需要初始化 `FileAttachment` 对象，指定文件名以及文件内容，
+并通过 `Message` 对象 *attach* 方法附着到邮件上：
+
+.. code-block:: python
+
+    from exchangelib import FileAttachment
+
+    logo_filename = 'logo.png'
+    with open(logo_filename, 'rb') as f:
+        logo = FileAttachment(
+            filename=logo_filename,
+            content=f.read(),
+        )
+    message.attach(logo)
+    message.send()
+
+内嵌附件图片
+------------
+
+附件图片可以嵌到 `HTML` 邮件体中进行展示。
+此时，需要为附件指定一个 `CID` ，以便在 `HTML` 中引用：
+
+.. code-block:: python
+
+    logo_filename = 'logo.png'
+    with open(logo_filename, 'rb') as f:
+        logo = FileAttachment(
+            filename=logo_filename,
+            content=f.read(),
+            content_id=logo_filename,
+        )
+    message.attach(logo)
+    message.body = HTMLBody('<html><body>Hello logo: <img src="cid:%s"></body></html>' % (logo_filename,))
+    message.send()
 
 下一步
 ======
