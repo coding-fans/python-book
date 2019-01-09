@@ -81,8 +81,45 @@ matplotlib
 
     `Github`_ 上有个项目提供一些字体文件，以供测试： `dolbydu/font <https://github.com/dolbydu/font>`_ 。
 
+保存图片
+========
+
+将图表保存成文件，只需调用 `savefig` 方法。保存为 `PNG` 图片：
+
+.. code-block:: python
+
+    plt.savefig('foo.png')
+
+文件格式由文件后缀名决定，另存为 `PDF` 文件：
+
+.. code-block:: python
+
+    plt.savefig('foo.pdf')
+
+如果仅需获取保存文件内容，则可借助 `BytesIO` ：
+
+.. code-block:: python
+
+    import io
+
+    bio = io.BytesIO()
+    plt.savefig(bio, format='png')
+
+    bio.seek(0)
+    content = bio.read()
+
 下一步
 ======
+
+.. toctree::
+    :titlesonly:
+
+    疑难杂症 <issues>
+
+参考文献
+========
+
+#. `Matplotlib Pie chart - Python Tutorials <https://pythonspot.com/matplotlib-pie-chart/>`_
 
 .. include:: /_fragments/next-step-to-wechat-mp.rst
 

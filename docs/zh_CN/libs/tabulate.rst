@@ -32,25 +32,25 @@ tabulate
 
 .. code-block:: pycon
 
-	>>> from tabulate import tabulate
+    >>> from tabulate import tabulate
 
-	>>> table_header = ['Name', 'Chinese', 'Math', 'English']
-	>>> table_data = [
-	...     ('Tom', '90', '80', '85'),
-	...     ('Jim', '70', '90', '80'),
-	...     ('Lucy', '90', '70', '90'),
-	... ]
+    >>> table_header = ['Name', 'Chinese', 'Math', 'English']
+    >>> table_data = [
+    ...     ('Tom', '90', '80', '85'),
+    ...     ('Jim', '70', '90', '80'),
+    ...     ('Lucy', '90', '70', '90'),
+    ... ]
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='grid'))
-	+--------+-----------+--------+-----------+
-	| Name   |   Chinese |   Math |   English |
-	+========+===========+========+===========+
-	| Tom    |        90 |     80 |        85 |
-	+--------+-----------+--------+-----------+
-	| Jim    |        70 |     90 |        80 |
-	+--------+-----------+--------+-----------+
-	| Lucy   |        90 |     70 |        90 |
-	+--------+-----------+--------+-----------+
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='grid'))
+    +--------+-----------+--------+-----------+
+    | Name   |   Chinese |   Math |   English |
+    +========+===========+========+===========+
+    | Tom    |        90 |     80 |        85 |
+    +--------+-----------+--------+-----------+
+    | Jim    |        70 |     90 |        80 |
+    +--------+-----------+--------+-----------+
+    | Lucy   |        90 |     70 |        90 |
+    +--------+-----------+--------+-----------+
 
 上述代码，先从 `tabulate` 库导入同名工具函数；
 接着，定义一个用于演示的数据表格，包括表头和表数据；
@@ -66,6 +66,29 @@ tabulate
 
 是的，就是这么简单！
 
+中文对齐
+========
+
+默认没有考虑中文字符宽度，因此无法对齐：
+
+.. code-block:: text
+
+    +---------+--------+---------+--------+
+    | 工具      | 持仓     | 总成本     | 平均成本   |
+    +---------+--------+---------+--------+
+
+解决这个问题只需安装 `wcwidth` 包：
+
+.. code-block:: shell-session
+
+    $ pip install wcwidth
+
+并在代码中导入：
+
+.. code-block:: python
+
+    import wcwidth
+
 表格样式
 ========
 
@@ -76,130 +99,130 @@ plain
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='plain'))
-	Name      Chinese    Math    English
-	Tom            90      80         85
-	Jim            70      90         80
-	Lucy           90      70         90
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='plain'))
+    Name      Chinese    Math    English
+    Tom            90      80         85
+    Jim            70      90         80
+    Lucy           90      70         90
 
 simple
 ------
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='simple'))
-	Name      Chinese    Math    English
-	------  ---------  ------  ---------
-	Tom            90      80         85
-	Jim            70      90         80
-	Lucy           90      70         90
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='simple'))
+    Name      Chinese    Math    English
+    ------  ---------  ------  ---------
+    Tom            90      80         85
+    Jim            70      90         80
+    Lucy           90      70         90
 
 grid
 ----
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='grid'))
-	+--------+-----------+--------+-----------+
-	| Name   |   Chinese |   Math |   English |
-	+========+===========+========+===========+
-	| Tom    |        90 |     80 |        85 |
-	+--------+-----------+--------+-----------+
-	| Jim    |        70 |     90 |        80 |
-	+--------+-----------+--------+-----------+
-	| Lucy   |        90 |     70 |        90 |
-	+--------+-----------+--------+-----------+
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='grid'))
+    +--------+-----------+--------+-----------+
+    | Name   |   Chinese |   Math |   English |
+    +========+===========+========+===========+
+    | Tom    |        90 |     80 |        85 |
+    +--------+-----------+--------+-----------+
+    | Jim    |        70 |     90 |        80 |
+    +--------+-----------+--------+-----------+
+    | Lucy   |        90 |     70 |        90 |
+    +--------+-----------+--------+-----------+
 
 fancy_grid
 ----------
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
-	╒════════╤═══════════╤════════╤═══════════╕
-	│ Name   │   Chinese │   Math │   English │
-	╞════════╪═══════════╪════════╪═══════════╡
-	│ Tom    │        90 │     80 │        85 │
-	├────────┼───────────┼────────┼───────────┤
-	│ Jim    │        70 │     90 │        80 │
-	├────────┼───────────┼────────┼───────────┤
-	│ Lucy   │        90 │     70 │        90 │
-	╘════════╧═══════════╧════════╧═══════════╛
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
+    ╒════════╤═══════════╤════════╤═══════════╕
+    │ Name   │   Chinese │   Math │   English │
+    ╞════════╪═══════════╪════════╪═══════════╡
+    │ Tom    │        90 │     80 │        85 │
+    ├────────┼───────────┼────────┼───────────┤
+    │ Jim    │        70 │     90 │        80 │
+    ├────────┼───────────┼────────┼───────────┤
+    │ Lucy   │        90 │     70 │        90 │
+    ╘════════╧═══════════╧════════╧═══════════╛
 
 pipe
 ----
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='pipe'))
-	| Name   |   Chinese |   Math |   English |
-	|:-------|----------:|-------:|----------:|
-	| Tom    |        90 |     80 |        85 |
-	| Jim    |        70 |     90 |        80 |
-	| Lucy   |        90 |     70 |        90 |
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='pipe'))
+    | Name   |   Chinese |   Math |   English |
+    |:-------|----------:|-------:|----------:|
+    | Tom    |        90 |     80 |        85 |
+    | Jim    |        70 |     90 |        80 |
+    | Lucy   |        90 |     70 |        90 |
 
 orgtlb
 ------
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='orgtbl'))
-	| Name   |   Chinese |   Math |   English |
-	|--------+-----------+--------+-----------|
-	| Tom    |        90 |     80 |        85 |
-	| Jim    |        70 |     90 |        80 |
-	| Lucy   |        90 |     70 |        90 |
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='orgtbl'))
+    | Name   |   Chinese |   Math |   English |
+    |--------+-----------+--------+-----------|
+    | Tom    |        90 |     80 |        85 |
+    | Jim    |        70 |     90 |        80 |
+    | Lucy   |        90 |     70 |        90 |
 
 jira
 ----
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='jira'))
-	|| Name   ||   Chinese ||   Math ||   English ||
-	| Tom    |        90 |     80 |        85 |
-	| Jim    |        70 |     90 |        80 |
-	| Lucy   |        90 |     70 |        90 |
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='jira'))
+    || Name   ||   Chinese ||   Math ||   English ||
+    | Tom    |        90 |     80 |        85 |
+    | Jim    |        70 |     90 |        80 |
+    | Lucy   |        90 |     70 |        90 |
 
 presto
 ------
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='presto'))
-	 Name   |   Chinese |   Math |   English
-	--------+-----------+--------+-----------
-	 Tom    |        90 |     80 |        85
-	 Jim    |        70 |     90 |        80
-	 Lucy   |        90 |     70 |        90
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='presto'))
+     Name   |   Chinese |   Math |   English
+    --------+-----------+--------+-----------
+     Tom    |        90 |     80 |        85
+     Jim    |        70 |     90 |        80
+     Lucy   |        90 |     70 |        90
 
 psql
 ----
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='psql'))
-	+--------+-----------+--------+-----------+
-	| Name   |   Chinese |   Math |   English |
-	|--------+-----------+--------+-----------|
-	| Tom    |        90 |     80 |        85 |
-	| Jim    |        70 |     90 |        80 |
-	| Lucy   |        90 |     70 |        90 |
-	+--------+-----------+--------+-----------+
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='psql'))
+    +--------+-----------+--------+-----------+
+    | Name   |   Chinese |   Math |   English |
+    |--------+-----------+--------+-----------|
+    | Tom    |        90 |     80 |        85 |
+    | Jim    |        70 |     90 |        80 |
+    | Lucy   |        90 |     70 |        90 |
+    +--------+-----------+--------+-----------+
 
 rst
 ---
 
 .. code-block:: pycon
 
-	>>> print(tabulate(table_data, headers=table_header, tablefmt='rst'))
-	======  =========  ======  =========
-	Name      Chinese    Math    English
-	======  =========  ======  =========
-	Tom            90      80         85
-	Jim            70      90         80
-	Lucy           90      70         90
-	======  =========  ======  =========
+    >>> print(tabulate(table_data, headers=table_header, tablefmt='rst'))
+    ======  =========  ======  =========
+    Name      Chinese    Math    English
+    ======  =========  ======  =========
+    Tom            90      80         85
+    Jim            70      90         80
+    Lucy           90      70         90
+    ======  =========  ======  =========
 
 html
 ----

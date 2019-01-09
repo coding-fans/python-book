@@ -25,6 +25,7 @@ Python语言小册
     推荐类库 <libs/index>
     部署方案 <deployment/index>
     附录 <appendices/index>
+    鸣谢 <acknowledgements/index>
 
 .. comments
     comment something out below

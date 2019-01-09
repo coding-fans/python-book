@@ -209,6 +209,11 @@ HTML邮件
 
 .. include:: /_fragments/next-step-to-wechat-mp.rst
 
+参考文献
+========
+
+#. `How to Embed Images in Your Emails: The Facts <https://sendgrid.com/blog/embedding-images-emails-facts/>`_
+
 .. include:: /_fragments/wechat-reward.rst
 
 .. include:: /_fragments/disqus.rst
