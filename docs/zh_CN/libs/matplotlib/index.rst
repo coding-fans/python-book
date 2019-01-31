@@ -116,12 +116,12 @@ matplotlib
 
     疑难杂症 <issues>
 
+.. include:: /_fragments/next-step-to-wechat-mp.rst
+
 参考文献
 ========
 
 #. `Matplotlib Pie chart - Python Tutorials <https://pythonspot.com/matplotlib-pie-chart/>`_
-
-.. include:: /_fragments/next-step-to-wechat-mp.rst
 
 .. include:: /_fragments/wechat-reward.rst
 

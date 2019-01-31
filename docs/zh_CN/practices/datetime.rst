@@ -29,7 +29,7 @@
 .. code-block:: python
     :linenos:
 
-    def get_last_monday():
+    def get_this_monday():
         today = datetime.today()
         this_monday = (today - timedelta(days=today.weekday())).replace(
             hour=0,
@@ -37,11 +37,18 @@
             second=0,
             microsecond=0,
         )
-        last_monday = (this_monday - timedelta(days=7))
+        return this_monday
+
+    def get_last_monday():
+        this_monday = get_this_monday()
+        last_monday = this_monday - timedelta(days=7)
         return last_monday
 
-第 *4* 行取出当前日期时间；
-第 *3-8* 行计算得到本周一；第 *9* 行减去 *7* 天得到上周一。
+函数 `get_this_monday` 获取本周一的日期，其中第 *2* 行取出当前日期时间；
+第 *3-8* 行计算得到本周一。
+
+函数 `get_last_monday` 获取上周一的日期，其中第 *12* 行获取本周一的日期；
+第 *13* 行将其减去 *7* 天得到上周一。
 
 
 上月

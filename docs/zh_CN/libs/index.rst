@@ -19,6 +19,7 @@
     exchangelib <exchangelib>
     Faker <faker>
     IPy <ipy>
+    kazoo <kazoo>
     matplotlib <matplotlib/index>
     openpyxl <openpyxl>
     tabulate <tabulate>
