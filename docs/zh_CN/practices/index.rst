@@ -19,6 +19,7 @@
     更优雅地造测试数据 <../libs/faker>
     装饰器高级用法 <advanced-decorator>
     处理命令行参数 <argparse>
+    打包分发Python程序 <binary-release>
     日期时间处理 <datetime>
     解决Python2的编码问题 <py2-encoding>
     日志输出 <logging.rst>

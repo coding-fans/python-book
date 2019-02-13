@@ -21,6 +21,14 @@
 免费资料
 ========
 
+编程派
+------
+
+`编程派`_ 是一位 `Python` 编程爱好者利用业余时间开发出了自己的网站，专注 `Python` 编程。
+网站致力于让更多的人了解 `Python` 语言，更快地获取国外的 `Python` 教程和资源，一起交流、学习 `Python` 。
+
+`http://www.codingpy.com/ <http://www.codingpy.com/>`_
+
 用Python做科学计算
 ------------------
 
@@ -30,6 +38,8 @@
 如何设计精巧的程序界面；
 如何和 *C* 语言所编写的高速计算程序结合；
 如何编写声音、图像处理算法。
+
+.. _编程派: http://www.codingpy.com/
 
 .. comments
     comment something out below
