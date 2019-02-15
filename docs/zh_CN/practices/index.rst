@@ -21,6 +21,7 @@
     处理命令行参数 <argparse>
     打包分发Python程序 <binary-release>
     日期时间处理 <datetime>
+    使用GDB调试Python程序 <debug-python-with-gdb>
     解决Python2的编码问题 <py2-encoding>
     日志输出 <logging.rst>
     计算字符串相似度 <string-similarity>
