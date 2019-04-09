@@ -18,6 +18,7 @@
 
     exchangelib <exchangelib>
     Faker <faker>
+    html-table <html-table>
     IPy <ipy>
     kazoo <kazoo>
     matplotlib <matplotlib/index>
