@@ -22,6 +22,7 @@
     打包分发Python程序 <binary-release>
     日期时间处理 <datetime>
     使用GDB调试Python程序 <debug-python-with-gdb>
+    发布自己的Python包 <publish-package>
     解决Python2的编码问题 <py2-encoding>
     日志输出 <logging.rst>
     计算字符串相似度 <string-similarity>

@@ -1,0 +1,113 @@
+.. 发布自己的Python包
+    FileName:   publish-package.rst
+    Author:     Fasion Chan
+    Created:    2019-02-15 18:26:54
+    @contact:   fasionchan@gmail.com
+    @version:   $Id$
+
+    Description:
+
+    Changelog:
+
+.. meta::
+	:description lang=zh:
+	:keywords: python, package, upload, publish, pip, twine, setup.py, python包, 上传, 发布
+
+==================
+发布自己的Python包
+==================
+
+注册
+====
+
+先在 `Python` 官网注册一个账号，地址是：`https://pypi.python.org/pypi <https://pypi.python.org/pypi>`_ 。
+
+配置
+====
+
+账号注册后，就可以用其来登记新建的 `Python` 包，以及上传包更新。
+上传新包一般由 `twine` 命令完成， `twine` 需要知道 `Python` 仓库地址以及账号信息。
+因此，可以将这些信息写在配置文件 `~/.pypirc` 里，这样运行命令时便不需要再次输入了。
+下面是一个配置示例，以 `foo` 为用户名， `bar` 为密码：
+
+.. code-block:: text
+
+    [distutils]
+    index-servers=pypi
+
+    [pypi]
+    repository = https://upload.pypi.org/legacy/
+    username = foo
+    password = bar
+
+其中，密码也可以不写进配置，这样每次运行 `twine` 时，将提示输入密码。
+
+准备
+====
+
+编写 `Python` 包的过程，这里就不细说了。
+本文的重点是怎么将自己的 `Python` 包发布出去，然后可以用 `pip` 命令安装。
+
+`Python` 包的实现方式可以参考其他文档。其实无非就是规划好目录结构，然后编写 `setup.py` 文件：
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+    # -*- encoding=utf8 -*-
+
+    VERSION = '1.0'
+
+    from setuptools import (
+        setup,
+    )
+
+    setup(
+        name='libase',
+        version=VERSION,
+        author='Fasion Chan',
+        author_email='fasionchan@gmail.com',
+        packages=[
+            'libase',
+        ],
+        scripts=[
+        ],
+        package_data={
+        },
+        install_requires=[
+        ],
+    )
+
+构建
+====
+
+运行命令 `python setup.py sdist` 进行构建并打包。
+完成之后，在 `dist` 目录下可以看到形如 `xxxx-1.0.tar.gz` 的压缩包。
+
+上传
+====
+
+运行命令 `twine upload dist/*` 便可将构建的所有包上传，这时便大功告成了！
+
+应用
+====
+
+运行命令 `pip install xxxx` 便可以安装你发布的 `Python` 包了！
+你可以发布任何你想发布的东西，任何人也可以安装任何你发布的东西，成就感杠杠的有木有！
+
+我们提倡自由分享的精神，有用的代码无私奉献出来可以节约很多人很多时间！
+—— `Life is short, use Python!`
+
+当然了，努力提升自己，分享高质量代码，不要坑别人哦~
+
+下一步
+======
+
+.. include:: /_fragments/next-step-to-wechat-mp.rst
+
+.. include:: /_fragments/wechat-reward.rst
+
+.. include:: /_fragments/disqus.rst
+
+.. comments
+    comment something out below
+
