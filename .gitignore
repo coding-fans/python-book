@@ -115,3 +115,6 @@ dmypy.json
 .pyre/
 
 *.swp
+
+.DS_Store
+.vscode/
