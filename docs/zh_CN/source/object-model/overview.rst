@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2019-10-13 11:03:47
     Last Modified by: fasion
-    Last Modified time: 2019-10-14 16:43:36
+    Last Modified time: 2019-10-16 09:07:19
 
 .. meta::
     :description lang=zh:
@@ -12,9 +12,9 @@
         那么，Python对象模型都有哪些特色呢？
     :keywords: python, 源码剖析, 对象模型, 对象, 类型, 类, 面向对象, type, object
 
-==========
-Python对象模型概述
-==========
+==================
+Python对象体系概述
+==================
 
 `Python` 是一门 **面向对象** 语言，实现了一个完整的面向对象体系，简洁而优雅。
 
@@ -151,13 +151,40 @@ Python对象模型概述
 .. figure:: /_images/source/object-model/overview/d528a1c29fe1f100822b569c44db78ee.png
 
 现在不可避免需要讨论 `type` 以及 `object` 两个特殊的类型。
-`object` 是所有类型的 **基类** ，本质上是一种类型，因此其类型必然是 `type` 。
-`type` 是所有类型的类型，本质上也是一种类型，因此其类型必须是它自己！
-这就完整了！
+
+理论上， `object` 是所有类型的 **基类** ，本质上是一种类型，因此其类型必然是 `type` 。
+而 `type` 是所有类型的类型，本质上也是一种类型，因此其类型必须是它自己！
+
+.. code-block:: pycon
+
+    >>> type(object)
+    <class 'type'>
+    >>> type(object) is type
+    True
+
+    >>> type(type)
+    <class 'type'>
+    >>> type(type) is type
+    True
+
+另外，由于 `object` 是所有类型的 **基类** ，理论上也是 `type` 的基类( `__base__` 属性)：
+
+.. code-block:: pycon
+
+    >>> issubclass(type, object)
+    True
+    >>> type.__base__
+    <class 'object'>
+
+但是 `object` 自身便不能有基类了。为什么呢？
+对于存在继承关系的类，成员属性和成员方法查找需要回溯继承链，不断查找基类。
+因此，继承链必须有一个终点，不然就死循环了。
 
 .. figure:: /_images/source/object-model/overview/cbe8a2dd383503319d8ed091f8b9ad99.png
 
-可以看到，所有类型的基类收敛于 `object` ，所有类型的的类型都是 `type` ，包括它自己！
+这就完整了！
+
+可以看到，所有类型的基类收敛于 `object` ，所有类型的类型都是 `type` ，包括它自己！
 这就是 `Python` 类型、对象体系全图，设计简洁、优雅、严谨。
 
 该图将成为后续阅读源码、探索 `Python` 对象模型的有力工具，像地图一样指明方向。
