@@ -2,7 +2,14 @@
     Author: fasion
     Created time: 2019-10-14 17:04:56
     Last Modified by: fasion
-    Last Modified time: 2019-10-17 19:18:28
+    Last Modified time: 2019-10-19 18:34:22
+
+.. meta::
+    :description lang=zh:
+        面向对象理论中“类”和“对象”这两个重要概念，在Python内部均以对象的形式存在。
+        “类”是一种对象，称为类型对象；“类”实例化生成的“对象”也是对象，称为实例对象。
+        那么，对象在Python内部到底长啥样呢？
+    :keywords: python, 源码剖析, 对象模型, 对象, PyObject, PyVarObject, PyTypeObject, PyType_Type, PyBaseObject_Type
 
 ==================
 解开对象神秘的面纱
