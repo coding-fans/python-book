@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2019-10-13 11:02:47
     Last Modified by: fasion
-    Last Modified time: 2019-10-16 16:20:03
+    Last Modified time: 2019-10-21 09:56:59
 
 ==============
 Python源码剖析
@@ -12,12 +12,13 @@ Python源码剖析
     :titlesonly:
 
     对象模型 <object-model/index>
+    内建对象 <builtin-objects/index>
 
 对象模型
 ========
 
 #. 对象模型概述
-#. 解开对象神秘的面纱
+#. 揭开对象神秘的面纱
 #. 从创建到销毁，对象的生命周期
 
 内建对象
@@ -42,7 +43,7 @@ Python源码剖析
 
 #. Python 程序执行过程与字节码
 #. 名字、作用域与名字空间
-#. 初试虚拟机，一颗软件CPU
+#. 初识虚拟机，一颗软件CPU
 #. if 判断控制流
 #. for 循环控制流
 #. while 循环控制流

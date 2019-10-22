@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2019-10-14 17:04:56
     Last Modified by: fasion
-    Last Modified time: 2019-10-19 18:34:22
+    Last Modified time: 2019-10-21 09:39:56
 
 .. meta::
     :description lang=zh:
@@ -12,7 +12,7 @@
     :keywords: python, 源码剖析, 对象模型, 对象, PyObject, PyVarObject, PyTypeObject, PyType_Type, PyBaseObject_Type
 
 ==================
-解开对象神秘的面纱
+揭开对象神秘的面纱
 ==================
 
 面向对象理论中“ **类** ”和“ **对象** ”这两个重要概念，在 `Python` 内部均以对象的形式存在。
@@ -61,7 +61,7 @@ PyObject，对象的基石
 当引用计数为零，便可将对象回收，这是最简单的垃圾回收机制。
 **类型指针** 指向对象的 **类型对象** ，类型对象描述 **实例对象** 的数据及行为。
 
-回过头来看 `_PyObject_HEAD_EXTRA` 宏的定义，同样在 `object.h` 头文件内：
+回过头来看 `_PyObject_HEAD_EXTRA` 宏的定义，同样在 `Include/object.h` 头文件内：
 
 .. code-block:: c
 

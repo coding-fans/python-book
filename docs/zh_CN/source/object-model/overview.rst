@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2019-10-13 11:03:47
     Last Modified by: fasion
-    Last Modified time: 2019-10-16 09:07:19
+    Last Modified time: 2019-10-21 09:45:18
 
 .. meta::
     :description lang=zh:
@@ -180,7 +180,7 @@ Python对象体系概述
 对于存在继承关系的类，成员属性和成员方法查找需要回溯继承链，不断查找基类。
 因此，继承链必须有一个终点，不然就死循环了。
 
-.. figure:: /_images/source/object-model/overview/cbe8a2dd383503319d8ed091f8b9ad99.png
+.. figure:: /_images/source/object-model/overview/3f7447fb33ed1dc500b39e1332bf364f.svg
 
 这就完整了！
 
