@@ -25,5 +25,6 @@ rm -rf "$BUILD_PATH"
     PATH="$PYENV_PATH/bin:$PATH" "$PYENV_PATH/bin/sphinx-autobuild" \
         --ignore "*.swp" \
         -H $BIND_ADDR \
+        -p 58000 \
         . "$BUILD_PATH/html"
 )

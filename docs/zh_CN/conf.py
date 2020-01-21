@@ -76,8 +76,9 @@ pygments_style = 'sphinx'
 
 
 # -- Options for HTML output -------------------------------------------------
-
+html_title = project
 html_favicon = '_static/favicon.png'
+html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
