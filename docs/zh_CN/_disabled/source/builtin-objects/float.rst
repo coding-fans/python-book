@@ -2,7 +2,11 @@
     Author: fasion
     Created time: 2019-10-21 19:55:02
     Last Modified by: fasion
-    Last Modified time: 2019-10-22 20:03:57
+    Last Modified time: 2019-10-23 09:22:48
+
+.. meta::
+    :description lang=zh:
+    :keywords: python, 源码剖析, float, PyFloatObject, PyFloat_Type, PyNumberMethods, 空闲对象缓存池
 
 =====================
 从 float 对象开始探索

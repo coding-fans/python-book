@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2019-10-14 17:04:56
     Last Modified by: fasion
-    Last Modified time: 2019-10-21 09:39:56
+    Last Modified time: 2019-10-21 09:50:39
 
 .. meta::
     :description lang=zh:
@@ -120,6 +120,8 @@ PyObject，对象的基石
         double ob_fval;
     } PyFloatObject;
 
+`PyFloatObject` 在头文件 `Include/floatobject.h` 中定义。
+
 .. figure:: /_images/source/object-model/pyobject/b886457105881ce9b6fcffb0964f61db.svg
     :width: 320px
 
@@ -136,6 +138,8 @@ PyObject，对象的基石
         PyObject **ob_item;
         Py_ssize_t allocated;
     } PyListObject;
+
+`PyListObject` 在头文件 `Include/listobject.h` 中定义。
 
 .. figure:: /_images/source/object-model/pyobject/29c687effd0464eb074bf1aa7002fe21.svg
 

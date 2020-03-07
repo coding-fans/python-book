@@ -1,13 +1,9 @@
-.. zbarlight
-    FileName:   zbarlight.rst
-    Author:     Fasion Chan
-    Created:    2018-04-08 13:45:38
-    @contact:   fasionchan@gmail.com
-    @version:   $Id$
+..
+    Author: fasion
+    Created time: 2018-11-19 10:30:21
+    Last Modified by: fasion
+    Last Modified time: 2020-03-07 21:09:20
 
-    Description:
-
-    Changelog:
 
 =========
 zbarlight

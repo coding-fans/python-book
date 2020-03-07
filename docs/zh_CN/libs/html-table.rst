@@ -99,9 +99,9 @@ html-table
 
 `set_header_row_style` 将样式设置到表头两个 `<tr>` 标签上；
 `set_header_cell_style` 则将样式设置到每个 *<th>* 标签上。
-应该尽量将颜色等样式设置到 *<tr>* 标签上，而不是 *<th>* 标签上，以精简生成的 *HTML* 。
+应该尽量将颜色等样式设置到 *<tr>* 标签上，而不是 *<th>* 标签上，以生成精简的 *HTML* 。
 
-将次级表头字体大小调小，不在赘述：
+将次级表头字体大小调小，不再赘述：
 
 .. literalinclude:: /_src/libs/html-table/fruit-output.py
     :language: python

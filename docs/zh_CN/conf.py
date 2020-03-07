@@ -69,7 +69,7 @@ language = u'zh_CN'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', '_fragments', 'opt', '_src', '_disabled']
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', '_fragments', 'opt', '_src', '_disabled', 'var']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -103,7 +103,7 @@ html_theme_options = {
     #'fixed_sidebar': True,
 
     # GitHub
-    'github_user': 'fasionchan',
+    'github_user': 'coding-fans',
     'github_repo': 'python-book',
     'github_banner': True,
     'github_type': 'star',

@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2019-10-17 19:14:01
     Last Modified by: fasion
-    Last Modified time: 2019-10-19 18:36:32
+    Last Modified time: 2019-10-22 14:52:58
 
 .. meta::
     :description lang=zh:
@@ -459,7 +459,7 @@ C API
         _Py_INC_REFTOTAL  _Py_REF_DEBUG_COMMA       \
         ((PyObject *)(op))->ob_refcnt++)
 
-`Py_DECREF` 将引用计数减一( *5* 行)，并在引用计数为 *0* 是回收对象( *8* 行)：
+`Py_DECREF` 将引用计数减一( *5* 行)，并在引用计数为 *0* 时回收对象( *8* 行)：
 
 .. code-block:: c
     :linenos:
