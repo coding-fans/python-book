@@ -21,6 +21,7 @@ Python语言小册
     :titlesonly:
 
     关于 <about/index>
+    数据库操作 <database/index>
     最佳实践 <practices/index>
     推荐类库 <libs/index>
     部署方案 <deployment/index>
