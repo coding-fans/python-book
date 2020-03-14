@@ -25,6 +25,8 @@ Python语言小册
     最佳实践 <practices/index>
     推荐类库 <libs/index>
     部署方案 <deployment/index>
+    面试题精选 <interview/index>
+    译文 <translations/index>
     附录 <appendices/index>
     鸣谢 <acknowledgements/index>
 

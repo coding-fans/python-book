@@ -17,12 +17,12 @@ GitHub
 ======
 
 本项目所有示例代码托管在 ``GitHub`` 上，仓库是：
-`go-book <https://github.com/fasionchan/go-book/>`_ 。
+`python-book <https://github.com/coding-fans/python-book/>`_ 。
 
 建议初学者亲自动手，将所有示例程序编写一遍，加深理解。
 **编程没有捷径** ，唯有带着 **好奇心** 探索程序背后的秘密，多动手勤练习，方能编写出你的理想世界。
 
-如需与我们交流，也可以在在本项目中 `新建一个Issue <https://github.com/fasionchan/go-book/issues>`_ ，
+如需与我们交流，也可以在在本项目中 `新建一个Issue <https://github.com/coding-fans/python-book/issues>`_ ，
 以这种形式进行讨论。
 内容可以包括但不局限于：
 

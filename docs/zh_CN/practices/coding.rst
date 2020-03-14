@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2020-03-01 15:02:11
     Last Modified by: fasion
-    Last Modified time: 2020-03-10 08:46:46
+    Last Modified time: 2020-03-11 13:58:45
 
 .. meta::
     :description lang=zh:
@@ -222,7 +222,7 @@ UTF-8
 .. figure:: /_images/practices/coding/4ea27ce5fbce4c7b310a029edadb72a5.svg
 
 如图，以 *0* 开头的字节为 **单字节** 编码，总共 *7* 个有效编码位，编码范围为 *U+0000* 至 *U+007F* ，刚好对应 *ASCII* 码所有字符。
-以 *110* 开头的字节为 **双字节** 编码，总共 *11* 个有效编码位，最大值是 *0x7FF* ，因此编码范围为 *U+008F* 至 *U+07FF* ；
+以 *110* 开头的字节为 **双字节** 编码，总共 *11* 个有效编码位，最大值是 *0x7FF* ，因此编码范围为 *U+0080* 至 *U+07FF* ；
 以 *1110* 开头的字节为 **三字节** 编码，总共 *16* 个有效编码位，最大值是 *0xFFFF* ，因此编码范围为 *U+0800* 至 *U+FFFF* 。
 
 根据开头不同， *UTF-8* 流中的字节，可以分为以下几类：
