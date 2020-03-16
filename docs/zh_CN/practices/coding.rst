@@ -2,7 +2,7 @@
     Author: fasion
     Created time: 2020-03-01 15:02:11
     Last Modified by: fasion
-    Last Modified time: 2020-03-11 13:58:45
+    Last Modified time: 2020-03-17 08:33:11
 
 .. meta::
     :description lang=zh:
@@ -46,8 +46,12 @@
 
 根据 *ASCII* 码表，由 *01000001* 这 *8* 个比特位组成的八位字节，代表字母 *A* 。
 
-.. figure:: /_images/practices/coding/7f524be0e18ac44cc71276393e60718a.svg
-    :width: 480px
+.. comments
+    .. figure:: /_images/practices/coding/7f524be0e18ac44cc71276393e60718a.svg
+        :width: 480px
+
+.. figure:: /_images/practices/coding/4f0bdb9aec64ab25376f46f560bbfd71.png
+    :width: 463px
 
 顺便提一下，比特本身没有意义，**比特** 在 **上下文** ( *context* )中才构成信息。
 举个例子，对于内存中一个字节 *01000001* ，你将它看做一个整数，它就是 65 ；
@@ -89,8 +93,12 @@ latin1
 图中绿色部分是不可打印的( *unprintable* )控制字符，左半部分是 *ASCII* 码。
 因此，*latin1* 字符集是 *ASCII* 码的超集：
 
-.. figure:: /_images/practices/coding/29ffff6c6a7fe03e54c1add05b526211.svg
-    :width: 240px
+.. comments
+    .. figure:: /_images/practices/coding/29ffff6c6a7fe03e54c1add05b526211.svg
+        :width: 240px
+
+.. figure:: /_images/practices/coding/6d5bf7af588decefa03e3796af6ed260.png
+    :width: 250px
 
 一个字节掰成两半，欧美两兄弟各用一半。
 至此，欧美人民都玩嗨了，东亚人民呢？
@@ -109,8 +117,12 @@ GB2312、GBK和GB18030
 为什么需要 *ASCII* 码呢？因为，在计算机世界，不可避免要跟数字、英文字母打交道。
 至于拉丁字母，重要性就没那么大，也就无所谓了。
 
-.. figure:: /_images/practices/coding/892499ea16f81e1f597c87e302b84fb4.svg
-    :width: 240px
+.. comments
+    .. figure:: /_images/practices/coding/892499ea16f81e1f597c87e302b84fb4.svg
+        :width: 240px
+
+.. figure:: /_images/practices/coding/1bd6bfa4291cea53ea102a6a05fcdba2.png
+    :width: 250px
 
 *GB2312* 字符集总共收录了 *6* 千多个汉字，用两个字节来表示足矣，但事情远没有这么简单。
 同样的数字字符，在 *GB2312* 中占用 *2* 个字节，在 *ASCII* 码中占用 *1* 个字节，这不就不兼容了吗？
@@ -130,7 +142,11 @@ GB2312、GBK和GB18030
 在 *GB2312* 中，如果一个字节最高位 *b8* 为 *0* ，该字节便是单字节编码，即 *ASCII* 码。
 如果字节最高位 *b8* 为 *1* ，它就是双字节编码的首字节，与其后字节一起表示一个字符。
 
-.. figure:: /_images/practices/coding/3aa9e337e9deebd578cf1d687d0c936b.svg
+.. comments
+    .. figure:: /_images/practices/coding/3aa9e337e9deebd578cf1d687d0c936b.svg
+        :width: 640px
+
+.. figure:: /_images/practices/coding/e0dcdd21f0d34f879abcfeaeb33aa475.png
     :width: 640px
 
 变长编码方案目的在于兼容 *ASCII* 码，但也带来一个问题：
@@ -141,8 +157,12 @@ GB2312、GBK和GB18030
 因此，后来又推出了 `GBK`_ 和 `GB18030`_ 字符集。
 *GBK* 是 *GB2312* 的超集，完全兼容 *GB2312* ；而 *GB18030* 又是 *GBK* 的超集，完全兼容 *GBK* 。
 
-.. figure:: /_images/practices/coding/1327be41bba7074cb15bc7466bce83fe.svg
-    :width: 320px
+.. comments
+    .. figure:: /_images/practices/coding/1327be41bba7074cb15bc7466bce83fe.svg
+        :width: 320px
+
+.. figure:: /_images/practices/coding/7c5356851dd49d6dcf7d70564aa7be73.png
+    :width: 338px
 
 因此，对中文编码文本进行解码，指定 *GB18030* 最为健壮：
 
@@ -219,7 +239,10 @@ UTF-8
 #. 码位由 *U+0800* 至 *U+FFFF* 的字符，用 *3* 个字节编码，首字节以 *1110* 开头，其余字节同样以 *10* 开头；
 #. *4* 至 *6* 字节编码的情况以此类推；
 
-.. figure:: /_images/practices/coding/4ea27ce5fbce4c7b310a029edadb72a5.svg
+.. comments
+    .. figure:: /_images/practices/coding/4ea27ce5fbce4c7b310a029edadb72a5.svg
+
+.. figure:: /_images/practices/coding/1b82a506c385957ce899d0d027fc7ab6.png
 
 如图，以 *0* 开头的字节为 **单字节** 编码，总共 *7* 个有效编码位，编码范围为 *U+0000* 至 *U+007F* ，刚好对应 *ASCII* 码所有字符。
 以 *110* 开头的字节为 **双字节** 编码，总共 *11* 个有效编码位，最大值是 *0x7FF* ，因此编码范围为 *U+0080* 至 *U+07FF* ；
@@ -240,7 +263,10 @@ UTF-8
 
 至此，我们已经具备了读懂 *UTF-8* 编码字节流的能力，不信来看一个例子：
 
-.. figure:: /_images/practices/coding/fb9147b0d0080d2759bbe1fefde6c2b1.svg
+.. comments
+    .. figure:: /_images/practices/coding/fb9147b0d0080d2759bbe1fefde6c2b1.svg
+
+.. figure:: /_images/practices/coding/d77f60debd77d112c1b78f190b223ddd.png
 
 概念回顾
 ========
