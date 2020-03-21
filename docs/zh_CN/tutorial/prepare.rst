@@ -1,8 +1,8 @@
-.. 
+..
     Author: huangxiaoyan
     Created time: 2020-02-29 11:18:33
-    Last Modified by: huangxiaoyan
-    Last Modified time: 2020-03-21 23:04:05
+    Last Modified by: fasion
+    Last Modified time: 2020-03-21 23:18:43
 
 ====================
 搭建 Python 编程环境
@@ -166,9 +166,7 @@ Unix
 附录
 ====
 
-.. include:: /_fragments/next-step-to-wechat-mp.rst
-
-.. include:: /_fragments/wechat-reward.rst
+.. include:: /_fragments/appendix.rst
 
 .. include:: /_fragments/disqus.rst
 
