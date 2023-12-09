@@ -1,2 +1,2 @@
 ntplib==0.3.3
-pyinstaller==3.6
+pyinstaller==5.13.1
